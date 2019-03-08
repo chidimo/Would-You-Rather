@@ -1,4 +1,14 @@
 let users = {
+    chidiorji: {
+        id: 'chidiorji',
+        name: 'Chidi orji',
+        avatarURL: '../../images/snow.jpg',
+        answers: {
+            "8xf0y6ziyjabvozdd253nd": 'optionOne',
+            "6ni6ok3ym7mf1p33lnez": 'optionOne',
+        },
+        questions: []
+    },
     sarahedo: {
         id: 'sarahedo',
         name: 'Sarah Edo',
