@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 import Login from './Login';
+import Question from './Question';
 
 class Home extends Component {
     render() {
@@ -15,7 +16,7 @@ class Home extends Component {
                     loggedIn === true
                     ?
                     questionIds.map((id) => (
-                    <p key={id}>Question: {id}</p>
+                        <Question key={id} id={id} />
                     ))
                     :
                     <Login />
