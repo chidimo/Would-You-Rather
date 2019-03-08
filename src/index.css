@@ -17,3 +17,13 @@ code {
 .app-container {
     margin-top: 3rem;
 }
+
+.avatar {
+  height: 100px;
+  width: 100px;
+}
+
+span.author-name {
+  font-weight: bold;
+  font-size: 28px;
+}
