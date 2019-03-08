@@ -13,6 +13,12 @@ const Navbar = (props) => {
                     <li className="nav-item">
                         <a className="nav-link" href="/">New question</a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/">Leaderboard</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/">Logout</a>
+                    </li>
                 </ul>
             </div>
         </nav>
