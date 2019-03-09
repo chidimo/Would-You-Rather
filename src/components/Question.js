@@ -5,35 +5,63 @@ import { connect } from 'react-redux';
 import Author from './Author'
 
 
+
 class Question extends Component {
+
+    state = { selectedRadio: '' }
+
+    toggleSelectedRadio = (option) => {
+        this.setState({selectedRadio: option})
+    }
 
     answerQuetions = (e, id) => {
         e.preventDefault()
-        const t = e.target
-        const oOne = t.optionOne.checked
-        const oTwo = t.optionTwo.checked
-        console.log("Anser question: ", oOne, oTwo, id)
+        const { selectedRadio } = this.state
+        const { question } = this.props
+        const selected_text = question[selectedRadio].text
+
+
+        console.log('selected: ', selectedRadio, selected_text)
     }
 
     render() {
+        const { selectedRadio } = this.state
         const { question, auth_user } = this.props
-        console.log('question props: ', this.props)
 
         return (
             <div className='question-home-card card'>
 
                 <Author id={question.author} />
  
-                <h4>Would You Rather</h4>
                 <form onSubmit={(e) => this.answerQuetions(e, question.id)}>
-                    <p>
-                        <input name='optionOne' type='radio' />
-                        {question.optionOne.text}
-                    </p>
-                    <p>
-                        <input name='optionTwo' type='radio' />
-                        {question.optionTwo.text}
-                    </p>
+                <h4>Would You Rather</h4>
+                    <div>
+                        <label for={question.optionOne.text}>
+                            <input
+                                checked={selectedRadio === 'optionOne'}
+                                onChange={() => this.toggleSelectedRadio('optionOne')}
+                                id={question.optionOne.text}
+                                name='optionOne'
+                                type='radio' 
+                                value={question.optionOne.text}
+                            />
+                            {question.optionOne.text}
+                        </label>
+                    </div>
+
+                    <div>
+                        <label for={question.optionTwo.text}>
+                            <input
+                                checked={selectedRadio === 'optionTwo'}
+                                onChange={() => this.toggleSelectedRadio('optionTwo')}
+                                id={question.optionTwo.text}
+                                name='optionTwo'
+                                type='radio' 
+                                value={question.optionTwo.text}
+                            />
+                            {question.optionTwo.text}
+                        </label>
+                    </div>
 
                     <button className='btn btn-sm btn-primary' type='submit'>Submit</button>
                 </form>
