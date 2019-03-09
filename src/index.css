@@ -33,3 +33,7 @@ span.author-name {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+.questions-toggler {
+  cursor: pointer;
+}
