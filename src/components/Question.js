@@ -24,8 +24,6 @@ class Question extends Component {
             <div className='question-home-card card'>
 
                 <Author id={question.author} />
-
-                <p>{formatDate(question.timestamp)}</p>
  
                 <h4>Would You Rather</h4>
                 <form onSubmit={(e) => this.answerQuetions(e, question.id)}>

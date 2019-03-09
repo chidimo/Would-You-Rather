@@ -8,13 +8,11 @@ class Author extends Component {
     render() {
         const { auth_user, author } = this.props
         console.log('author props: ', this.props)
-        const {
-            name, avatarURL, 
-        } = author
+        const { name, avatarURL, } = author
 
         return (
             <div className='author-card'>
-                <img src={`https://robohash.org/${name}.png`} alt={`Avatar of ${name}`} className="avatar"/>
+                <img src={`https://robohash.org/${name}.png`} alt={`Avatar of ${name}`} className="avatar img-card"/>
                 <span className='author-name'>{name}</span>
             </div>
         )
