@@ -6,48 +6,75 @@ import Question from './Question';
 
 class QuestionRender extends Component {
 
+    state = { display_answered: 'd-none', display_unanswered: ''}
+
+    toggle_display = (which) => {
+        if (which === 'Unanswered') {
+            this.setState({
+                display_answered: 'd-none',
+                display_unanswered: ''
+            })
+        }
+        else {
+            this.setState({
+                display_answered: '',
+                display_unanswered: 'd-none'
+            })
+        }
+    }
+
     render() {
-        const { questionIds, answered, unanswered } = this.props
+
+        const { display_answered, display_unanswered } = this.state
+        const { questionIds, users, auth_user } = this.props
+
+        const answered = Object.keys(users[auth_user].answers)
+        const unanswered = questionIds.filter((id) => {
+            return !answered.includes(id)
+        })
 
         return (
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-6 questions-toggler'>
-                        <h5>Unanswered ({unanswered.length})</h5>
+                        <h5 onClick={() => this.toggle_display('Unanswered')}>Unanswered ({unanswered.length})</h5>
                     </div>
                     <div className='col-sm-6 questions-toggler'>
-                        <h5>Answered ({answered.length})</h5>
+                        <h5 onClick={() => this.toggle_display('Answered')}>Answered ({answered.length})</h5>
                     </div>
                 </div>
-                {
-                    questionIds.map((id) => (
-                        <Question key={id} id={id} />)
-                    )
-                }
+
+                <hr/>
+
+                <div id='cssAnsweredQuestions' className={display_answered}>
+                    <h5>Answered questions</h5>
+                    {
+                        answered.map((id) => (
+                            <Question key={id} id={id} />)
+                        )
+                    }
+                </div>
+
+                <div id='cssUnansweredQuestions' className={display_unanswered}>
+                    <h5>Unanswered questions</h5>
+                    {
+                        unanswered.map((id) => (
+                            <Question key={id} id={id} />)
+                        )
+                    }
+                </div>
             </div>
         )
     }
 }
 
 
-function mapStateToProps({ questions, auth_user }) {
-    console.log("QuestionRender: ", questions, "***")
-
-    let answered = []
-    let unanswered = []
-
-    let kv = Object.entries(questions)
-
-    for (let i in kv) {
-        let votes = kv[i][1].optionOne.votes.concat(kv[i][1].optionTwo.votes)
-        if (votes.includes(auth_user)) answered.push(kv[i][0])
-        else unanswered.push(kv[i][0])
-    }
+function mapStateToProps({ questions, users, auth_user }) {
 
     return {
+        auth_user,
+        users,
         questionIds: Object.keys(questions),
-        answered,
-        unanswered,
     }
 }
 
