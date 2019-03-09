@@ -6,7 +6,7 @@ import { set_auth_user } from './authUser';
 
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-const AUTH_USER_ID = 'chidiorji'
+const AUTH_USER_ID = 'tylermcginnis'
 
 export const handleInitialData = () => {
     return (dispatch) => {
