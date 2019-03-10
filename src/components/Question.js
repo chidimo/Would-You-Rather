@@ -4,41 +4,46 @@ import { connect } from 'react-redux';
 
 import Author from './Author'
 
+import { handle_answer_question } from '../actions/shared';
+
 
 
 class Question extends Component {
 
-    state = { selectedRadio: '' }
+    state = { selected_radio: '' }
 
     toggleSelectedRadio = (option) => {
-        this.setState({selectedRadio: option})
+        this.setState({selected_radio: option})
     }
 
-    answerQuetions = (e, id) => {
+    answerQuestion = (e) => {
         e.preventDefault()
-        const { selectedRadio } = this.state
-        const { question } = this.props
-        const selected_text = question[selectedRadio].text
+        const { selected_radio } = this.state
+        const { dispatch, question, auth_user } = this.props
 
-
-        console.log('selected: ', selectedRadio, selected_text)
+        const data = {
+            authedUser: auth_user,
+            qid: question.id,
+            answer: selected_radio
+        }
+        dispatch(handle_answer_question(data))
     }
 
     render() {
-        const { selectedRadio } = this.state
-        const { question, auth_user } = this.props
+        const { selected_radio } = this.state
+        const { question } = this.props
 
         return (
             <div className='question-home-card card'>
 
                 <Author id={question.author} />
  
-                <form onSubmit={(e) => this.answerQuetions(e, question.id)}>
+                <form onSubmit={(e) => this.answerQuestion(e)}>
                 <h4>Would You Rather</h4>
                     <div>
-                        <label for={question.optionOne.text}>
+                        <label>
                             <input
-                                checked={selectedRadio === 'optionOne'}
+                                checked={selected_radio === 'optionOne'}
                                 onChange={() => this.toggleSelectedRadio('optionOne')}
                                 id={question.optionOne.text}
                                 name='optionOne'
@@ -50,9 +55,9 @@ class Question extends Component {
                     </div>
 
                     <div>
-                        <label for={question.optionTwo.text}>
+                        <label>
                             <input
-                                checked={selectedRadio === 'optionTwo'}
+                                checked={selected_radio === 'optionTwo'}
                                 onChange={() => this.toggleSelectedRadio('optionTwo')}
                                 id={question.optionTwo.text}
                                 name='optionTwo'
