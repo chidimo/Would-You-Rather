@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
 
-import Question from './Question';
+import QuestionUnanswered from './QuestionUnanswered';
+import QuestionAnswered from './QuestionAnswered'
 
 class QuestionRender extends Component {
 
@@ -50,7 +51,7 @@ class QuestionRender extends Component {
                     <h5>Answered questions</h5>
                     {
                         answered.map((id) => (
-                            <Question key={id} id={id} />)
+                            <QuestionAnswered key={id} id={id} answer={users[auth_user].answers[id]}/>)
                         )
                     }
                 </div>
@@ -59,7 +60,7 @@ class QuestionRender extends Component {
                     <h5>Unanswered questions</h5>
                     {
                         unanswered.map((id) => (
-                            <Question key={id} id={id} />)
+                            <QuestionUnanswered key={id} id={id} />)
                         )
                     }
                 </div>

@@ -8,9 +8,9 @@ import { handle_answer_question } from '../actions/shared';
 
 
 
-class Question extends Component {
+class QuestionUnanswered extends Component {
 
-    state = { selected_radio: '' }
+    state = { selected_radio: '', selected_answer: '' }
 
     toggleSelectedRadio = (option) => {
         this.setState({selected_radio: option})
@@ -30,7 +30,7 @@ class Question extends Component {
     }
 
     render() {
-        const { selected_radio } = this.state
+        const { selected_radio, selected_answer } = this.state
         const { question } = this.props
 
         return (
@@ -39,9 +39,9 @@ class Question extends Component {
                 <Author id={question.author} />
  
                 <form onSubmit={(e) => this.answerQuestion(e)}>
-                <h4>Would You Rather</h4>
+                <h5>Would You Rather</h5>
                     <div>
-                        <label>
+                        <label className=''>
                             <input
                                 checked={selected_radio === 'optionOne'}
                                 onChange={() => this.toggleSelectedRadio('optionOne')}
@@ -55,7 +55,7 @@ class Question extends Component {
                     </div>
 
                     <div>
-                        <label>
+                        <label className=''>
                             <input
                                 checked={selected_radio === 'optionTwo'}
                                 onChange={() => this.toggleSelectedRadio('optionTwo')}
@@ -86,4 +86,4 @@ function mapStateToProps({ questions, auth_user }, { id }) {
     }
 }
 
-export default connect(mapStateToProps)(Question)
+export default connect(mapStateToProps)(QuestionUnanswered)
