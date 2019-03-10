@@ -8,7 +8,6 @@ import Questions from './Questions';
 class Home extends Component {
     render() {
         const { loggedIn } = this.props
-        console.log('home props ', this.props)
 
         return (
             <div className='container'>
