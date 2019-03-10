@@ -1,22 +1,37 @@
 import React, { Component } from 'react'
-
 import { connect } from 'react-redux';
 
+import { login } from '../actions/authUser'
+
 class Login extends Component {
+
+    loginUser = (e) => {
+        e.preventDefault()
+        const { dispatch } = this.props
+        dispatch(login(e.target.value))
+    }
+
+
     render() {
         const { userIds } = this.props
-        console.log('props ', this.props)
 
         return (
             <div className='center'>
                 <h2 className=''>Please select a user to continue.</h2>
 
-                <select className='custom-select custom-select-lg mb-3'>
-                    <option value=''>Select user</option>
-                    {userIds.map((id) => (
-                        <option key={id} value={id}>{id}</option>
-                    ))}
-                </select>
+                <form onChange={(e) => this.loginUser(e)}>
+                    <select className='custom-select custom-select-lg mb-3'>
+                        <option value=''>Select user</option>
+                        {userIds.map((id) => (
+                            <option
+                                key={id}
+                                value={id}
+                            >
+                                {id}
+                            </option>
+                        ))}
+                    </select>
+                </form>
             </div>
         )
     }
