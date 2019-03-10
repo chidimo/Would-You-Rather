@@ -13,7 +13,7 @@ class Author extends Component {
         return (
             <div className='author-card'>
                 <img src={`https://robohash.org/${name}.png`} alt={`Avatar of ${name}`} className="avatar img-card"/>
-                <span className='author-name'>{name}</span>
+                <span className='author-name'>{name} asks:</span>
             </div>
         )
     }
