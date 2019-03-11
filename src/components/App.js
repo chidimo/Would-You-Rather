@@ -10,6 +10,7 @@ import Navbar from './Navbar';
 import NewPoll from './NewPoll';
 import LeaderBoard from './LeaderBoard'
 import PollAnswerPage from './PollAnswerPage'
+import PollResultPage from './PollResultPage'
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
                         <Route path='/new' component={NewPoll}/>
                         <Route path='/leaderboard' component={LeaderBoard}/>
                         <Route path='/poll/:id' component={PollAnswerPage}/>
+                        <Route path='/poll/results/:id' component={PollResultPage}/>
                     </div>
                 </React.Fragment>
             </BrowserRouter>
