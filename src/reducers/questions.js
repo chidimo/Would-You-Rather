@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, ANSWER_QUESTION } from '../actions/constants';
+import { RECEIVE_QUESTIONS, ANSWER_QUESTION, ADD_POLL } from '../actions/constants';
 
 export const questions = (state={}, action) => {
     switch (action.type) {
@@ -15,6 +15,12 @@ export const questions = (state={}, action) => {
                         votes: state[action.qid][action.answer].votes.concat([action.authedUser])
                     }
                 }
+            }
+
+        case ADD_POLL:
+            return {
+                ...state,
+                [action.poll.id]: action.poll
             }
 
       default:
