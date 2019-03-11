@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading';
-
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import { handleInitialData } from '../actions/shared';
@@ -10,7 +9,7 @@ import Home from './Home';
 import Navbar from './Navbar';
 import NewQuestion from './NewQuestion';
 import LeaderBoard from './LeaderBoard'
-
+import QuestionAnswerPage from './QuestionAnswerPage'
 
 
 class App extends Component {
@@ -18,6 +17,7 @@ class App extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData())
     }
+
     render() {
         return (
 
@@ -29,6 +29,7 @@ class App extends Component {
                         <Route path='/' exact component={Home}/>
                         <Route path='/new' component={NewQuestion}/>
                         <Route path='/leaderboard' component={LeaderBoard}/>
+                        <Route path='/poll/:id' component={QuestionAnswerPage}/>
                     </div>
                 </React.Fragment>
             </BrowserRouter>
