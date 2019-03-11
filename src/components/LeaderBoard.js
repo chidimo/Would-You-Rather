@@ -7,7 +7,7 @@ class LeaderBoard extends Component {
         return (
 
             <div className='container'>
-                LeaderBoard
+                <h2 className='page-heading'>LeaderBoard</h2>
             </div>
         );
     }

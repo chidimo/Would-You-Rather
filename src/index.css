@@ -37,3 +37,7 @@ span.author-name {
 .questions-toggler {
   cursor: pointer;
 }
+
+.page-heading {
+  text-align: center;
+}

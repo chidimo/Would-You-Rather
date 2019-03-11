@@ -34,7 +34,7 @@ class NewPoll extends Component {
                     />
                     <input
                         type='text'
-                        placeholder='Enter first option'
+                        placeholder='Enter second option'
                         name='optionTwo'
                         className='form-control'
                     />
