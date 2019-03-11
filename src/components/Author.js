@@ -7,7 +7,6 @@ class Author extends Component {
 
     render() {
         const { auth_user, author } = this.props
-        console.log('author props: ', this.props)
         const { name, } = author
 
         return (
