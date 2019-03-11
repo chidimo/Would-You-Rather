@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class NewQuestion extends Component {
+class NewPoll extends Component {
 
     render() {
         return (
@@ -13,4 +13,4 @@ class NewQuestion extends Component {
     }
 }
 
-export default NewQuestion;
+export default NewPoll;

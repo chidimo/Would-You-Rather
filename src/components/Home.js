@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 import Login from './Login';
-import Questions from './Questions';
+import Polls from './Polls';
 
 class Home extends Component {
     render() {
@@ -13,7 +13,7 @@ class Home extends Component {
             <div className='container'>
                 {
                     loggedIn === true
-                    ? <Questions />
+                    ? <Polls />
                     : <Login />
                 }
             </div>

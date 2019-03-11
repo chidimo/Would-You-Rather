@@ -19,7 +19,7 @@ const Navbar = (props) => {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <NavLink to='/new' className='nav-link'>
-                                New Question
+                                New Poll
                             </NavLink>
                         </li>
                         <li className="nav-item">

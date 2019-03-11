@@ -7,9 +7,9 @@ import { handleInitialData } from '../actions/shared';
 
 import Home from './Home';
 import Navbar from './Navbar';
-import NewQuestion from './NewQuestion';
+import NewPoll from './NewPoll';
 import LeaderBoard from './LeaderBoard'
-import QuestionAnswerPage from './QuestionAnswerPage'
+import PollAnswerPage from './PollAnswerPage'
 
 
 class App extends Component {
@@ -27,9 +27,9 @@ class App extends Component {
                     <LoadingBar />
                     <div className="container app-container">
                         <Route path='/' exact component={Home}/>
-                        <Route path='/new' component={NewQuestion}/>
+                        <Route path='/new' component={NewPoll}/>
                         <Route path='/leaderboard' component={LeaderBoard}/>
-                        <Route path='/poll/:id' component={QuestionAnswerPage}/>
+                        <Route path='/poll/:id' component={PollAnswerPage}/>
                     </div>
                 </React.Fragment>
             </BrowserRouter>

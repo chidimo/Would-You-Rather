@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
-import Question from './Question';
+import Poll from './Poll';
 
-class QuestionRender extends Component {
+class Polls extends Component {
 
     state = { display_answered: 'd-none', display_unanswered: ''}
 
@@ -49,7 +49,7 @@ class QuestionRender extends Component {
                     <h5>Answered questions</h5>
                     {
                         answered.map((id) => (
-                            <Question key={id} id={id} answer={users[auth_user].answers[id]}/>)
+                            <Poll key={id} id={id} answer={users[auth_user].answers[id]}/>)
                         )
                     }
                 </div>
@@ -58,7 +58,7 @@ class QuestionRender extends Component {
                     <h5>Unanswered questions</h5>
                     {
                         unanswered.map((id) => (
-                            <Question key={id} id={id} />)
+                            <Poll key={id} id={id} />)
                         )
                     }
                 </div>
@@ -77,4 +77,4 @@ function mapStateToProps({ questions, users, auth_user }) {
     }
 }
 
-export default connect(mapStateToProps)(QuestionRender)
+export default connect(mapStateToProps)(Polls)

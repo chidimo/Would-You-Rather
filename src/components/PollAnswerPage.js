@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { handle_answer_question } from '../actions/shared';
 
 import Author from './Author'
 
-class QuestionAnswerPage extends Component {
+class PollAnswerPage extends Component {
 
     state = { selected_radio: '' }
 
@@ -24,6 +25,7 @@ class QuestionAnswerPage extends Component {
             answer: selected_radio
         }
         dispatch(handle_answer_question(data))
+        this.props.history.push('/')
     }
 
     render() {
@@ -75,7 +77,6 @@ class QuestionAnswerPage extends Component {
 }
 
 function mapStateToProps({ questions, auth_user }, props ) {
-    console.log('P: ** ', props)
     const { id } = props.match.params
     const q = questions[id]
 
@@ -85,4 +86,4 @@ function mapStateToProps({ questions, auth_user }, props ) {
     }
 }
 
-export default connect(mapStateToProps)(QuestionAnswerPage)
+export default withRouter(connect(mapStateToProps)(PollAnswerPage))
