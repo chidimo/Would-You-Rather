@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
-
 import { connect } from 'react-redux';
-
-import Author from './Author'
 
 import { handle_answer_question } from '../actions/shared';
 
+import Author from './Author'
 
+class QuestionAnswerPage extends Component {
 
-class QuestionUnanswered extends Component {
-
-    state = { selected_radio: '', selected_answer: '' }
+    state = { selected_radio: '' }
 
     toggleSelectedRadio = (option) => {
         this.setState({selected_radio: option})
@@ -30,7 +27,7 @@ class QuestionUnanswered extends Component {
     }
 
     render() {
-        const { selected_radio, selected_answer } = this.state
+        const { selected_radio } = this.state
         const { question } = this.props
 
         return (
@@ -77,7 +74,9 @@ class QuestionUnanswered extends Component {
     }
 }
 
-function mapStateToProps({ questions, auth_user }, { id }) {
+function mapStateToProps({ questions, auth_user }, props ) {
+    console.log('P: ** ', props)
+    const { id } = props.match.params
     const q = questions[id]
 
     return {
@@ -86,4 +85,4 @@ function mapStateToProps({ questions, auth_user }, { id }) {
     }
 }
 
-export default connect(mapStateToProps)(QuestionUnanswered)
+export default connect(mapStateToProps)(QuestionAnswerPage)
