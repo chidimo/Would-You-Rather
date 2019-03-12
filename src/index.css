@@ -51,3 +51,10 @@ span.author-name {
   margin-bottom: 5px;
   border-radius: 5px;
 }
+
+.options {
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
