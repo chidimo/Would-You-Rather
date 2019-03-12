@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 import { handle_answer_question } from '../actions/shared';
 
-import Author from './Author'
+import User from './User'
 
 class PollAnswerPage extends Component {
 
@@ -40,7 +40,7 @@ class PollAnswerPage extends Component {
         return (
             <div className='question-home-card card'>
 
-                <Author id={question.author} />
+                <User id={question.author} />
  
                 <form onSubmit={(e) => this.answerQuestion(e)}>
                 <h5>Would You Rather</h5>

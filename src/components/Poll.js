@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import Author from './Author'
+import User from './User'
 
 
 class Poll extends Component {
@@ -13,7 +13,7 @@ class Poll extends Component {
         return (
             <div className='question-home-card card'>
 
-                <Author id={question.author} />
+                <User id={question.author} />
  
                 <h5>Would You Rather</h5>
                 <p>{question.optionOne.text}...</p>

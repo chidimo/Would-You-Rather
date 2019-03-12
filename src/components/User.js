@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 
-class Author extends Component {
+class User extends Component {
 
     render() {
         const { author } = this.props
@@ -27,4 +27,4 @@ function mapStateToProps({ users, auth_user }, { id }) {
     }
 }
 
-export default connect(mapStateToProps)(Author)
+export default connect(mapStateToProps)(User)

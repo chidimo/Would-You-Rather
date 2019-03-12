@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
 
-import Author from './Author'
+import User from './User'
 
 
 class PollResultPage extends Component {
@@ -16,7 +16,7 @@ class PollResultPage extends Component {
 
                 {/* <h2>Results for poll</h2>
 
-                <Author id={question.author} />
+                <User id={question.author} />
  
                 <h5>Would You Rather</h5>
                 <h4>{question.optionOne.text}</h4>
