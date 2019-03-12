@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, UPDATE_USER_ANSWERS } from '../actions/constants';
+import { RECEIVE_USERS, UPDATE_USER_ANSWERS, UPDATE_USER_QUESTIONS } from '../actions/constants';
 
 export const users = (state={}, action) => {
     switch (action.type) {
@@ -14,6 +14,15 @@ export const users = (state={}, action) => {
                         ...state[action.authedUser].answers,
                         [action.qid]:action.answer
                     }
+                }
+            }
+        
+        case UPDATE_USER_QUESTIONS:
+            return {
+                ...state,
+                [action.auth_user]: {
+                    ...state[action.auth_user],
+                    questions: state[action.auth_user].questions.concat([action.poll_id])
                 }
             }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { handle_add_poll } from '../actions/questions'
+import { handle_add_poll } from '../actions/shared'
 
 
 class NewPoll extends Component {

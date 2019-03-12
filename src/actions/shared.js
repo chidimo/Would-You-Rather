@@ -1,13 +1,13 @@
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-import { getInitialData, saveQuestionAnswer } from '../utils/api';
+import { getInitialData, saveQuestionAnswer, saveQuestion } from '../utils/api';
 
 import { receive_users } from './users'
 import { receive_questions } from './questions'
 import { set_auth_user } from './authUser';
 
 
-import { ANSWER_QUESTION, UPDATE_USER_ANSWERS, AUTH_USER_ID } from './constants';
+import { ANSWER_QUESTION, UPDATE_USER_ANSWERS, AUTH_USER_ID, ADD_POLL, UPDATE_USER_QUESTIONS } from './constants';
 
 export const handleInitialData = () => {
     return (dispatch) => {
@@ -21,7 +21,6 @@ export const handleInitialData = () => {
         })
     }
 }
-
 
 export const answer_question = ({ authedUser, qid, answer }) => {
     return {
@@ -53,5 +52,40 @@ export const handle_answer_question = (info) => {
                 dispatch(update_user_answers(info))
                 alert('There was an error answering the question. Try again.')
             })
+    }
+}
+
+
+// Question addition
+export const add_poll = (poll) => {
+    return {
+        type: ADD_POLL,
+        poll
+    }
+}
+
+export const update_user_questions = (auth_user, poll_id) => {
+    return {
+        type: UPDATE_USER_QUESTIONS,
+        auth_user,
+        poll_id,
+    }
+}
+
+export const handle_add_poll = (optionOneText, optionTwoText) => {
+    return (dispatch, getState) => {
+        const { auth_user } = getState()
+
+        dispatch(showLoading())
+        return saveQuestion({
+            author: auth_user,
+            optionOneText,
+            optionTwoText,
+        })
+        .then((poll) => {
+            dispatch(add_poll(poll))
+            dispatch(update_user_questions(auth_user, poll.id))
+        })
+        .then(() => dispatch(hideLoading()))
     }
 }
