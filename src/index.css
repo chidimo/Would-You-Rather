@@ -14,13 +14,24 @@ code {
 }
 
 
-.app-container {
+div.app-container {
     margin-top: 3rem;
+    width: 450px;
+}
+
+div.active {
+  border: 1px solid #b1d1f1;
+  padding: 0;
+  background: #b1d1f1;
+  border-radius: 5px;
+}
+
+div.home-row {
+  margin: auto;
 }
 
 .avatar {
   height: 50px;
-  /* width: 100px; */
   border-radius: 25px;
 }
 
@@ -32,13 +43,13 @@ span.author-name {
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-  width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .questions-toggler {
   cursor: pointer;
+  text-align: center;
 }
 
 .page-heading {
