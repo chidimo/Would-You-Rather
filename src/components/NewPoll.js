@@ -25,6 +25,7 @@ class NewPoll extends Component {
                 <h2 className='page-heading'>Create new poll</h2>
                 <hr/>
                 <h5>Would you rather...</h5>
+                
                 <form onSubmit={(e) => this.createQuestion(e)}>
                     <input
                         type='text'
@@ -42,7 +43,7 @@ class NewPoll extends Component {
 
                     <hr/>
 
-                    <button type='submit' className='btn btn-sm btn-primary'>Submit</button>
+                    <button style={{width:'100%'}} type='submit' className='btn btn-sm btn-primary'>Submit</button>
                 </form>
             </div>
         );

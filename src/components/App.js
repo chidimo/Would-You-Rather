@@ -30,7 +30,6 @@ class App extends Component {
                     <Navbar />
 
                     { loggedIn === true ?
-
                         <Fragment>
                             <LoadingBar />
                             <div className="container app-container">
