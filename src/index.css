@@ -64,6 +64,13 @@ span.author-name {
   font-size: 18px;
 }
 
+h3.total-score {
+  padding: 15px;
+  border-radius: 50%;
+  border: 1px goldenrod;
+  background: goldenrod;
+}
+
 .question-home-card {
   padding: 10px;
   border-radius: 10px;
