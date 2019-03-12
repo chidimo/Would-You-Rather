@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 
-class Board extends Component {
+class ScoreCard extends Component {
 
     render() {
 
@@ -45,4 +45,4 @@ function mapStateToProps({ auth_user }, { name, asked, answered, totalScore }) {
     }
 }
 
-export default connect(mapStateToProps)(Board)
+export default connect(mapStateToProps)(ScoreCard)

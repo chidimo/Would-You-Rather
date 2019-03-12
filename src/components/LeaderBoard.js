@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Board from './Board'
+import ScoreCard from './ScoreCard'
 
 
 class LeaderBoard extends Component {
@@ -35,7 +35,7 @@ class LeaderBoard extends Component {
                     sorted_ids.map((id) => {
                         const u = users[id]
                         return(
-                            <Board
+                            <ScoreCard
                                 key={u.id}
                                 name={u.name}
                                 asked={u.asked}
