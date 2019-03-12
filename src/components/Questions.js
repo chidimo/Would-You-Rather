@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 
-import Poll from './Poll';
+import Question from './Question';
 
-class Polls extends Component {
+class Questions extends Component {
 
     state = { 
         display_answered: 'd-none',
@@ -58,7 +58,7 @@ class Polls extends Component {
                 <div id='cssAnsweredQuestions' className={`${display_answered}`}>
                     {
                         answered.map((id) => (
-                            <Poll key={id} id={id} answer={users[auth_user].answers[id]}/>)
+                            <Question key={id} id={id} answer={users[auth_user].answers[id]}/>)
                         )
                     }
                 </div>
@@ -66,7 +66,7 @@ class Polls extends Component {
                 <div id='cssUnansweredQuestions' className={`${display_unanswered}`}>
                     {
                         unanswered.map((id) => (
-                            <Poll key={id} id={id} />)
+                            <Question key={id} id={id} />)
                         )
                     }
                 </div>
@@ -86,4 +86,4 @@ function mapStateToProps({ questions, users, auth_user }) {
     }
 }
 
-export default connect(mapStateToProps)(Polls)
+export default connect(mapStateToProps)(Questions)

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import User from './User'
 
 
-class Poll extends Component {
+class Question extends Component {
 
     render() {
         const { question, user } = this.props
@@ -46,4 +46,4 @@ function mapStateToProps({ questions, auth_user, users }, { id }) {
     }
 }
 
-export default connect(mapStateToProps)(Poll)
+export default connect(mapStateToProps)(Question)

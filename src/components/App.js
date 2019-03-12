@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import { handleInitialData } from '../actions/shared';
 
-import Home from './Home';
+import Questions from './Questions';
 import Navbar from './Navbar';
 import NewPoll from './NewPoll';
 import Login from './Login'
@@ -33,7 +33,7 @@ class App extends Component {
                     { loggedIn === true ?
                         <Fragment>
                             <LoadingBar />
-                                <Route path='/' exact component={Home}/>
+                                <Route path='/' exact component={Questions}/>
                                 <Route path='/add' component={NewPoll}/>
                                 <Route path='/leaderboard' component={LeaderBoard}/>
                                 <Route path='/answer/:id' component={QuestionAnswerPage}/>

@@ -72,7 +72,7 @@ class QuestionAnswerPage extends Component {
                             </label>
                         </div>
     
-                        <button className='btn btn-sm btn-primary' type='submit'>Submit</button>
+                        <button style={{width:'100%'}} className='btn btn-sm btn-primary' type='submit'>Submit</button>
                     </form>
                 </div>
 
