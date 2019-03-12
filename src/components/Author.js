@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class Author extends Component {
 
     render() {
-        const { auth_user, author } = this.props
+        const { author } = this.props
         const { name, } = author
 
         return (

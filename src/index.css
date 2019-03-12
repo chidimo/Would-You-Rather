@@ -41,3 +41,10 @@ span.author-name {
 .page-heading {
   text-align: center;
 }
+
+.board-card {
+  border: 1px solid lightblue;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}

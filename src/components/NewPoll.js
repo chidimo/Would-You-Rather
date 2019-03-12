@@ -32,6 +32,7 @@ class NewPoll extends Component {
                         name='optionOne'
                         className='form-control'
                     />
+                    <h3 className='text-center'>OR</h3>
                     <input
                         type='text'
                         placeholder='Enter second option'
@@ -39,7 +40,9 @@ class NewPoll extends Component {
                         className='form-control'
                     />
 
-                    <button type='submit' className='btn btn-sm btn-success'>Submit</button>
+                    <hr/>
+
+                    <button type='submit' className='btn btn-sm btn-primary'>Submit</button>
                 </form>
             </div>
         );
@@ -47,9 +50,11 @@ class NewPoll extends Component {
 }
 
 
-function mapStateToProps({ }) {
+function mapStateToProps({ auth_user }) {
 
-    return {}
+    return {
+        auth_user
+    }
 }
 
 export default withRouter(connect(mapStateToProps)(NewPoll));

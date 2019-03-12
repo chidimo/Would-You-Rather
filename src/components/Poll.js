@@ -16,14 +16,9 @@ class Poll extends Component {
                 <Author id={question.author} />
  
                 <h5>Would You Rather</h5>
-
-                <ol>
-                    <li>{question.optionOne.text}</li>
-                    <li>{question.optionTwo.text}</li>
-                </ol>
+                <p>{question.optionOne.text}...</p>
                 
                 <Link to={`/poll/${question.id}`} className='btn btn-primary btn-sm'>View poll</Link>
-
             </div>
         )
     }

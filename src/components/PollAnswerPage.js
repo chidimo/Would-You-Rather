@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import { handle_answer_question } from '../actions/shared';
 
@@ -8,7 +8,7 @@ import Author from './Author'
 
 class PollAnswerPage extends Component {
 
-    state = { selected_radio: '' }
+    state = { selected_radio: '', toHome: false }
 
     toggleSelectedRadio = (option) => {
         this.setState({selected_radio: option})
@@ -25,12 +25,17 @@ class PollAnswerPage extends Component {
             answer: selected_radio
         }
         dispatch(handle_answer_question(data))
-        this.props.history.push('/')
+        this.setState({toHome: true})
     }
 
     render() {
-        const { selected_radio } = this.state
+        const { selected_radio, toHome } = this.state
         const { question } = this.props
+
+        const id = question.id
+        console.log('state: ', this.state, id)
+
+        if (toHome) return <Redirect to={`/poll/results/${id}`} />
 
         return (
             <div className='question-home-card card'>
@@ -86,4 +91,4 @@ function mapStateToProps({ questions, auth_user }, props ) {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(PollAnswerPage))
+export default connect(mapStateToProps)(PollAnswerPage)
