@@ -12,6 +12,16 @@ class NewPoll extends Component {
         const t = e.target
         const optionOneText = t.optionOne.value
         const optionTwoText = t.optionTwo.value
+
+        if (!optionOneText) {
+            alert('Please fill the first option')
+            return
+        }
+        if (optionOneText && !optionTwoText) {
+            alert('Please fill the second option')
+            return
+        }
+
         const { dispatch } = this.props
         dispatch(handle_add_poll(optionOneText, optionTwoText))
         this.props.history.push('/')
