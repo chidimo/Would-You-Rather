@@ -1,18 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import LoadingBar from 'react-redux-loading';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import { handleInitialData } from '../actions/shared';
 
-import Questions from './Questions';
 import Navbar from './Navbar';
-import NewPoll from './NewPoll';
 import Login from './Login'
-import LeaderBoard from './LeaderBoard'
-import QuestionAnswerPage from './QuestionAnswerPage'
-import QuestionDetail from './QuestionDetail'
-import ErrorBoundary from './ErrorBoundary'
+import AppRoutes from './AppRoutes'
 
 
 class App extends Component {
@@ -32,16 +26,7 @@ class App extends Component {
 
                     <div className="container app-container">
                     { loggedIn === true ?
-                        <Fragment>
-                            <LoadingBar />
-                                <Route path='/' exact component={Questions}/>
-                                <Route path='/add' component={NewPoll}/>
-                                <Route path='/leaderboard' component={LeaderBoard}/>
-                                <Route path='/answer/:id' component={QuestionAnswerPage}/>
-                                <Route path='/question/:id' component={QuestionDetail}/>
-                                <Route component={ErrorBoundary}/>
-                        </Fragment>
-                        
+                        <AppRoutes />
                         : <Login />
                     }
                     </div>
