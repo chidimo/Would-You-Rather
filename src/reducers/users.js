@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, UPDATE_USER_ANSWERS, UPDATE_USER_QUESTIONS } from '../actions/constants';
+import { RECEIVE_USERS, UPDATE_USER_ANSWERS, UPDATE_USER_QUESTIONS } from '../actions/types';
 
 export const users = (state={}, action) => {
     switch (action.type) {

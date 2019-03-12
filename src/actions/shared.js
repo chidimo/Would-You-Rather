@@ -7,7 +7,7 @@ import { receive_questions } from './questions'
 import { set_auth_user } from './authUser';
 
 
-import { ANSWER_QUESTION, UPDATE_USER_ANSWERS, AUTH_USER_ID, ADD_POLL, UPDATE_USER_QUESTIONS } from './constants';
+import { ANSWER_QUESTION, UPDATE_USER_ANSWERS, AUTH_USER_ID, ADD_POLL, UPDATE_USER_QUESTIONS } from './types';
 
 export const handleInitialData = () => {
     return (dispatch) => {

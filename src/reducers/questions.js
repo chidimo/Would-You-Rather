@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, ANSWER_QUESTION, ADD_POLL } from '../actions/constants';
+import { RECEIVE_QUESTIONS, ANSWER_QUESTION, ADD_POLL } from '../actions/types';
 
 export const questions = (state={}, action) => {
     switch (action.type) {

@@ -1,5 +1,5 @@
 
-import { RECEIVE_USERS } from './constants'
+import { RECEIVE_USERS } from './types'
 
 export const receive_users = (users) => {
     return {

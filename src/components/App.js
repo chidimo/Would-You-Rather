@@ -12,6 +12,7 @@ import Login from './Login'
 import LeaderBoard from './LeaderBoard'
 import QuestionAnswerPage from './QuestionAnswerPage'
 import QuestionDetail from './QuestionDetail'
+import ErrorBoundary from './ErrorBoundary'
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
                                 <Route path='/leaderboard' component={LeaderBoard}/>
                                 <Route path='/answer/:id' component={QuestionAnswerPage}/>
                                 <Route path='/question/:id' component={QuestionDetail}/>
+                                <Route component={ErrorBoundary}/>
                         </Fragment>
                         
                         : <Login />

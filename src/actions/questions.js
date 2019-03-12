@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS } from './constants'
+import { RECEIVE_QUESTIONS } from './types'
 
 export const receive_questions = (questions) => {
     return {

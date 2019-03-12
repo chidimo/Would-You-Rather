@@ -1,4 +1,4 @@
-import { SET_AUTH_USER, LOGOUT, LOGIN } from './constants'
+import { SET_AUTH_USER, LOGOUT, LOGIN } from './types'
 
 export const set_auth_user = (id) => {
     return {

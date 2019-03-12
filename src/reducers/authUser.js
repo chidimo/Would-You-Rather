@@ -1,4 +1,4 @@
-import { SET_AUTH_USER, LOGOUT, LOGIN } from '../actions/constants'
+import { SET_AUTH_USER, LOGOUT, LOGIN } from '../actions/types'
 
 export const auth_user = (state='', action) => {
     switch (action.type) {
