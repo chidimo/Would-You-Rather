@@ -32,7 +32,7 @@ class QuestionAnswerPage extends Component {
         const { selected_radio, toHome, redirect_id } = this.state
         const { question } = this.props
 
-        if (toHome === true) return <Redirect push={true} to={`/question/details/${redirect_id}`} />
+        if (toHome === true) return <Redirect push={true} to={`/question/${redirect_id}`} />
 
         return (
             <div className='question-home-card card'>

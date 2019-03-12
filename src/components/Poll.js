@@ -18,7 +18,7 @@ class Poll extends Component {
                 <h5>Would You Rather</h5>
                 <p>{question.optionOne.text}...</p>
                 
-                <Link to={`/question/${question.id}`} className='btn btn-primary btn-sm'>View poll</Link>
+                <Link to={`/answer/${question.id}`} className='btn btn-primary btn-sm'>View poll</Link>
             </div>
         )
     }
