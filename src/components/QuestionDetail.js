@@ -13,7 +13,7 @@ class QuestionDetail extends Component {
         const user_ids = Object.keys(users)
 
         const user_answer = users[auth_user].answers[question_id]
-        console.log('pr ', this.props)
+        console.log('pr ', this.props, user_answer)
 
         let oOne = 0
         let oTwo = 0
@@ -47,8 +47,8 @@ class QuestionDetail extends Component {
                             <p>
                                 Would you rather {question.optionOne.text} <br/>
                             </p>
-                            <div class="progress" style={{height:'50px'}}>
-                                <div class="progress-bar" role="progressbar" style={{width:`${oOnePerc}%`}} aria-valuenow={oOnePerc} aria-valuemin="0" aria-valuemax="100">{oOnePerc}%</div>
+                            <div className="progress" style={{height:'50px'}}>
+                                <div className="progress-bar" role="progressbar" style={{width:`${oOnePerc}%`}} aria-valuenow={oOnePerc} aria-valuemin="0" aria-valuemax="100">{oOnePerc}%</div>
                             </div>
                             <p>{`${oOne} out of ${totalVotes} votes`}</p>
                                 
@@ -58,8 +58,8 @@ class QuestionDetail extends Component {
                             <p>
                                 Would you rather {question.optionTwo.text} <br/>
                             </p>
-                            <div class="progress" style={{height:'50px'}}>
-                                <div class="progress-bar" role="progressbar" style={{width:`${oTwoPerc}%`}} aria-valuenow={oTwoPerc} aria-valuemin="0" aria-valuemax="100">{oTwoPerc}%</div>
+                            <div className="progress" style={{height:'50px'}}>
+                                <div className="progress-bar" role="progressbar" style={{width:`${oTwoPerc}%`}} aria-valuenow={oTwoPerc} aria-valuemin="0" aria-valuemax="100">{oTwoPerc}%</div>
                             </div>
                             <p>{`${oTwo} out of ${totalVotes} votes`}</p>
                         </div>
