@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { connect } from 'react-redux';
 
 import User from './User'
@@ -43,7 +42,7 @@ class QuestionDetail extends Component {
  
 
                     <div className='col col-8'>
-                        <div className='options optionOneAnswers'>
+                        <div className={`options ${user_answer === 'optionOne' && 'optionOne'}`}>
                             <p>
                                 Would you rather {question.optionOne.text} <br/>
                             </p>
@@ -54,7 +53,7 @@ class QuestionDetail extends Component {
                                 
                         </div>
         
-                        <div className='options optionTwoAnswers'>
+                        <div className={`options ${user_answer === 'optionTwo' && 'optionTwo'}`}>
                             <p>
                                 Would you rather {question.optionTwo.text} <br/>
                             </p>
