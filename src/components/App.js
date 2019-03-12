@@ -35,9 +35,9 @@ class App extends Component {
                             <LoadingBar />
                             <div className="container app-container">
                                 <Route path='/' exact component={Home}/>
-                                <Route path='/new' component={NewPoll}/>
+                                <Route path='/add' component={NewPoll}/>
                                 <Route path='/leaderboard' component={LeaderBoard}/>
-                                <Route path='/poll/:id' component={PollAnswerPage}/>
+                                <Route path='/question/:id' component={PollAnswerPage}/>
                                 <Route path='/poll/results/:id' component={PollResultPage}/>
                             </div>
                         </Fragment>

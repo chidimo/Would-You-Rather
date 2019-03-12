@@ -18,7 +18,7 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <NavLink to='/new' className='nav-link'>
+                            <NavLink to='/add' className='nav-link'>
                                 New Poll
                             </NavLink>
                         </li>
