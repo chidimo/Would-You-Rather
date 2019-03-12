@@ -19,6 +19,8 @@ class QuestionAnswerPage extends Component {
         const { selected_radio } = this.state
         const { dispatch, question, auth_user } = this.props
 
+        if (!selected_radio) {alert('Please select an option'); return}
+
         const data = {
             authedUser: auth_user,
             qid: question.id,
