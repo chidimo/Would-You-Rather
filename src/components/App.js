@@ -10,8 +10,8 @@ import Navbar from './Navbar';
 import NewPoll from './NewPoll';
 import Login from './Login'
 import LeaderBoard from './LeaderBoard'
-import PollAnswerPage from './PollAnswerPage'
-import PollResultPage from './PollResultPage'
+import QuestionAnswerPage from './QuestionAnswerPage'
+import QuestionDetail from './QuestionDetail'
 
 
 class App extends Component {
@@ -37,8 +37,8 @@ class App extends Component {
                                 <Route path='/' exact component={Home}/>
                                 <Route path='/add' component={NewPoll}/>
                                 <Route path='/leaderboard' component={LeaderBoard}/>
-                                <Route path='/question/:id' component={PollAnswerPage}/>
-                                <Route path='/poll/results/:id' component={PollResultPage}/>
+                                <Route path='/question/:id' component={QuestionAnswerPage}/>
+                                <Route path='/question/details/:id' component={QuestionDetail}/>
                             </div>
                         </Fragment>
                         

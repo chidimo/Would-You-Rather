@@ -6,9 +6,9 @@ import { handle_answer_question } from '../actions/shared';
 
 import User from './User'
 
-class PollAnswerPage extends Component {
+class QuestionAnswerPage extends Component {
 
-    state = { selected_radio: '', toHome: false }
+    state = { selected_radio: '', toHome: false, redirect_id: '' }
 
     toggleSelectedRadio = (option) => {
         this.setState({selected_radio: option})
@@ -25,17 +25,14 @@ class PollAnswerPage extends Component {
             answer: selected_radio
         }
         dispatch(handle_answer_question(data))
-        this.setState({toHome: true})
+        this.setState({toHome: true, redirect_id: question.id})
     }
 
     render() {
-        const { selected_radio, toHome } = this.state
+        const { selected_radio, toHome, redirect_id } = this.state
         const { question } = this.props
 
-        const id = question.id
-        console.log('state: ', this.state, id)
-
-        if (toHome) return <Redirect to={`/poll/results/${id}`} />
+        if (toHome === true) return <Redirect push={true} to={`/question/details/${redirect_id}`} />
 
         return (
             <div className='question-home-card card'>
@@ -91,4 +88,4 @@ function mapStateToProps({ questions, auth_user }, props ) {
     }
 }
 
-export default connect(mapStateToProps)(PollAnswerPage)
+export default connect(mapStateToProps)(QuestionAnswerPage)

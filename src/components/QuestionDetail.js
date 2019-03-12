@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import User from './User'
 
 
-class PollResultPage extends Component {
+class QuestionDetail extends Component {
 
     render() {
         const { question, answer } = this.props
@@ -28,8 +28,10 @@ class PollResultPage extends Component {
 }
 
 function mapStateToProps({ questions, auth_user }, props) {
-    console.log('p: ', props)
+    console.log('ppppppp: ', props)
     const { id } = props.match.params
+
+    console.log('ID: ', id, "\n", questions)
     const q = questions[id]
 
     return {
@@ -38,4 +40,4 @@ function mapStateToProps({ questions, auth_user }, props) {
     }
 }
 
-export default connect(mapStateToProps)(PollResultPage)
+export default connect(mapStateToProps)(QuestionDetail)
