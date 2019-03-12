@@ -10,7 +10,7 @@ class User extends Component {
         const { name } = author
 
         return (
-            <div className='user-card'>
+            <div className=''>
                 <span className='author-name'>{name} asks:</span>
                 <img src={`https://robohash.org/${name}.png`} alt={`Avatar of ${name}`} className="avatar"/>
             </div>

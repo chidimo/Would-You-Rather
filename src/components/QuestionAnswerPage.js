@@ -35,42 +35,46 @@ class QuestionAnswerPage extends Component {
         if (toHome === true) return <Redirect push={true} to={`/question/${redirect_id}`} />
 
         return (
-            <div className='question-home-card card'>
+            <div className='question-home-card row'>
 
-                <User id={question.author} />
+                <div className='col col-5'>
+                    <User id={question.author} />
+                </div>
  
-                <form onSubmit={(e) => this.answerQuestion(e)}>
-                <h5>Would You Rather</h5>
-                    <div>
-                        <label className=''>
-                            <input
-                                checked={selected_radio === 'optionOne'}
-                                onChange={() => this.toggleSelectedRadio('optionOne')}
-                                id={question.optionOne.text}
-                                name='optionOne'
-                                type='radio' 
-                                value={question.optionOne.text}
-                            />
-                            {question.optionOne.text}
-                        </label>
-                    </div>
-
-                    <div>
-                        <label className=''>
-                            <input
-                                checked={selected_radio === 'optionTwo'}
-                                onChange={() => this.toggleSelectedRadio('optionTwo')}
-                                id={question.optionTwo.text}
-                                name='optionTwo'
-                                type='radio' 
-                                value={question.optionTwo.text}
-                            />
-                            {question.optionTwo.text}
-                        </label>
-                    </div>
-
-                    <button className='btn btn-sm btn-primary' type='submit'>Submit</button>
-                </form>
+                <div className='col col-7'>
+                    <form onSubmit={(e) => this.answerQuestion(e)}>
+                    <h5>Would You Rather</h5>
+                        <div>
+                            <label className=''>
+                                <input
+                                    checked={selected_radio === 'optionOne'}
+                                    onChange={() => this.toggleSelectedRadio('optionOne')}
+                                    id={question.optionOne.text}
+                                    name='optionOne'
+                                    type='radio' 
+                                    value={question.optionOne.text}
+                                />
+                                {question.optionOne.text}
+                            </label>
+                        </div>
+    
+                        <div>
+                            <label className=''>
+                                <input
+                                    checked={selected_radio === 'optionTwo'}
+                                    onChange={() => this.toggleSelectedRadio('optionTwo')}
+                                    id={question.optionTwo.text}
+                                    name='optionTwo'
+                                    type='radio' 
+                                    value={question.optionTwo.text}
+                                />
+                                {question.optionTwo.text}
+                            </label>
+                        </div>
+    
+                        <button className='btn btn-sm btn-primary' type='submit'>Submit</button>
+                    </form>
+                </div>
 
 
             </div>

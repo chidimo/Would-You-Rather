@@ -16,20 +16,22 @@ class Poll extends Component {
         if (Object.keys(user.answers).includes(id)) answered = true
 
         return (
-            <div className='question-home-card card'>
+            <div className='question-home-card row'>
+                <div className='col col-5'>
+                    <User id={question.author} />
+                </div>
 
-                <User id={question.author} />
- 
-                <h5>Would You Rather</h5>
-                <p>{question.optionOne.text}...</p>
+                <div className='col col-7'>
+                    <h5>Would You Rather</h5>
+                    <p>{question.optionOne.text}...</p>
 
-                {
-                    answered === true ?
-                    <Link to={`/question/${question.id}`} className='btn btn-success btn-sm'>View poll</Link>
-                    :
-                    <Link to={`/answer/${question.id}`} className='btn btn-primary btn-sm'>View poll</Link>
-                }
-                
+                    {
+                        answered === true ?
+                        <Link to={`/question/${question.id}`} style={{width:'100%'}} className='btn btn-success btn-sm'>View poll</Link>
+                        :
+                        <Link to={`/answer/${question.id}`} style={{width:'100%'}} className='btn btn-primary btn-sm'>View poll</Link>
+                    }
+                </div>
             </div>
         )
     }

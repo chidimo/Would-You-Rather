@@ -26,7 +26,7 @@ class ScoreCard extends Component {
                     </div>
     
                     <div className='col col-sm-2'>
-                        <h4>Score {totalScore}</h4>
+                        <h3>{totalScore}</h3>
                     </div>
     
                 </div>

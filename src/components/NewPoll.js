@@ -22,7 +22,7 @@ class NewPoll extends Component {
         return (
 
             <div className='container center'>
-                <h2 className='page-heading'>Create new poll</h2>
+                <h2 className='page-heading'>Add new poll</h2>
                 <hr/>
                 <h5>Would you rather...</h5>
                 

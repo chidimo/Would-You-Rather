@@ -31,30 +31,39 @@ class QuestionDetail extends Component {
         const oTwoPerc = Math.round((oTwo / totalVotes) * 100, 2)
 
         return (
-            <div className='question-home-card card'>
-                <User id={question.author} />
+            <div className=''>
+                <h2 className='page-heading'>Poll result</h2>
+                <hr/>
+
+                <div className='row question-home-card'>
+
+                    <div className='col col-4'>
+                        <User id={question.author} />
+                    </div>
  
-                <h5>Results for poll</h5>
 
-                <div className='options optionOneAnswers'>
-                    <p>
-                        Would you rather {question.optionOne.text} <br/>
-                    </p>
-                    <div class="progress" style={{height:'50px'}}>
-                        <div class="progress-bar" role="progressbar" style={{width:`${oOnePerc}%`}} aria-valuenow={oOnePerc} aria-valuemin="0" aria-valuemax="100">{oOnePerc}%</div>
+                    <div className='col col-8'>
+                        <div className='options optionOneAnswers'>
+                            <p>
+                                Would you rather {question.optionOne.text} <br/>
+                            </p>
+                            <div class="progress" style={{height:'50px'}}>
+                                <div class="progress-bar" role="progressbar" style={{width:`${oOnePerc}%`}} aria-valuenow={oOnePerc} aria-valuemin="0" aria-valuemax="100">{oOnePerc}%</div>
+                            </div>
+                            <p>{`${oOne} out of ${totalVotes} votes`}</p>
+                                
+                        </div>
+        
+                        <div className='options optionTwoAnswers'>
+                            <p>
+                                Would you rather {question.optionTwo.text} <br/>
+                            </p>
+                            <div class="progress" style={{height:'50px'}}>
+                                <div class="progress-bar" role="progressbar" style={{width:`${oTwoPerc}%`}} aria-valuenow={oTwoPerc} aria-valuemin="0" aria-valuemax="100">{oTwoPerc}%</div>
+                            </div>
+                            <p>{`${oTwo} out of ${totalVotes} votes`}</p>
+                        </div>
                     </div>
-                    <p>{`${oOne} out of ${totalVotes}`}</p>
-                        
-                </div>
-
-                <div className='options optionTwoAnswers'>
-                    <p>
-                        Would you rather {question.optionTwo.text} <br/>
-                    </p>
-                    <div class="progress" style={{height:'50px'}}>
-                        <div class="progress-bar" role="progressbar" style={{width:`${oTwoPerc}%`}} aria-valuenow={oTwoPerc} aria-valuemin="0" aria-valuemax="100">{oTwoPerc}%</div>
-                    </div>
-                    <p>{`${oTwo} out of ${totalVotes}`}</p>
                 </div>
             </div>
         )
