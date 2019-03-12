@@ -28,8 +28,9 @@ class LeaderBoard extends Component {
 
         return (
 
-            <div className='container'>
+            <div className=''>
                 <h2 className='page-heading'>LeaderBoard</h2>
+                <hr/>
 
                 {
                     sorted_ids.map((id) => {

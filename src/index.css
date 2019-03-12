@@ -13,10 +13,9 @@ code {
     monospace;
 }
 
-
 div.app-container {
     margin-top: 3rem;
-    width: 450px;
+    width: 600px;
 }
 
 div.active {
@@ -30,9 +29,30 @@ div.home-row {
   margin: auto;
 }
 
+div.user-card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+div.user-photo {
+  overflow:hidden;
+  width: 100px;
+  height: 100px;
+  margin:auto 1em;
+  border-radius:50%;
+}
+
+.row > .col-sm-7, .row >.col-sm-2 {
+  margin-top: 35px;
+}
+
 .avatar {
-  height: 50px;
-  border-radius: 25px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
 }
 
 span.author-name {
@@ -56,7 +76,7 @@ span.author-name {
   text-align: center;
 }
 
-.board-card {
+.score-card {
   border: 1px solid lightblue;
   padding: 10px;
   margin-bottom: 5px;

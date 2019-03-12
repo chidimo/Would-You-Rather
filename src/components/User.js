@@ -7,12 +7,12 @@ class User extends Component {
 
     render() {
         const { author } = this.props
-        const { name, } = author
+        const { name } = author
 
         return (
-            <div className='author-card'>
-                <img src={`https://robohash.org/${name}.png`} alt={`Avatar of ${name}`} className="avatar img-card"/>
+            <div className='user-card'>
                 <span className='author-name'>{name} asks:</span>
+                <img src={`https://robohash.org/${name}.png`} alt={`Avatar of ${name}`} className="avatar"/>
             </div>
         )
     }
