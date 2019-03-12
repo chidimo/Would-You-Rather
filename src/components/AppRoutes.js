@@ -18,9 +18,9 @@ const AppRoutes = (props) => {
             <LoadingBar />
             
             <Switch>
-                <Route path='/' exact component={Questions}/>
-                <Route path='/add' component={NewPoll}/>
-                <Route path='/leaderboard' component={LeaderBoard}/>
+                <Route exact path='/' exact component={Questions}/>
+                <Route exact path='/add' component={NewPoll}/>
+                <Route exact path='/leaderboard' component={LeaderBoard}/>
                 <Route path='/answer/:id' component={QuestionAnswerPage}/>
                 <Route path='/question/:id' component={QuestionDetail}/>
                 <Route component={ErrorBoundary}/>
