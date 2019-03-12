@@ -1,4 +1,4 @@
-export const AUTH_USER_ID = 'tylermcginnis'
+export const AUTH_USER_ID = ''
 export const SET_AUTH_USER = 'SET_AUTH_USER'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'

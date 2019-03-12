@@ -29,20 +29,20 @@ class App extends Component {
                 <Fragment>
                     <Navbar />
 
+                    <div className="container app-container">
                     { loggedIn === true ?
                         <Fragment>
                             <LoadingBar />
-                            <div className="container app-container">
                                 <Route path='/' exact component={Home}/>
                                 <Route path='/add' component={NewPoll}/>
                                 <Route path='/leaderboard' component={LeaderBoard}/>
                                 <Route path='/answer/:id' component={QuestionAnswerPage}/>
                                 <Route path='/question/:id' component={QuestionDetail}/>
-                            </div>
                         </Fragment>
                         
                         : <Login />
                     }
+                    </div>
                 </Fragment>
             </BrowserRouter>
         );

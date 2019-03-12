@@ -43,6 +43,10 @@ div.user-photo {
   border-radius:50%;
 }
 
+div.login-container {
+  margin-top: 150px;
+}
+
 .row > .col-sm-7, .row >.col-sm-2 {
   margin-top: 35px;
 }

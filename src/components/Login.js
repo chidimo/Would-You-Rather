@@ -16,8 +16,8 @@ class Login extends Component {
         const { userIds } = this.props
 
         return (
-            <div className='center'>
-                <h2 className=''>Please select a user to continue.</h2>
+            <div className='login-container'>
+                <h2 className='page-heading'>Select a user to continue.</h2>
 
                 <form onChange={(e) => this.loginUser(e)}>
                     <select className='custom-select custom-select-lg mb-3'>
