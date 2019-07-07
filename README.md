@@ -8,6 +8,8 @@ In the app, users will be able to answer questions, see which questions they hav
 
 Project home page <https://github.com/chidimo/Would-You-Rather>
 
+You can play the game here: <https://wud-u-rada.herokuapp.com/>
+
 ## The project
 
 This is a simple game written in `React`. It is meant to track polling type questions with two options.
